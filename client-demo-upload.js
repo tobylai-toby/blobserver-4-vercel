@@ -12,4 +12,4 @@ const file = new File(["hello world"], "hello.txt", {
 })
 
 // upload the file
-uploadFile(file,"your-channel-name","https://your-vercel-app.vercel.app");  
+uploadFile(file,"test","https://bloptmp.tobylai.fun/api/test-channel-recv");  

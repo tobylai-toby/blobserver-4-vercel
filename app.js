@@ -88,8 +88,18 @@ app.post("/api/vercel-blob/del", (req, res) => {
         res.status(500).send("error deleting");
     });
 });
-app.post("/api/test-channels-recv", (req, res) => {
+app.post("/api/test-channels-recv", async(req, res) => {
     let { channel_name,url, downloadUrl, pathname, contentType } = req.body;
     console.log("received from channel", channel_name, downloadUrl, pathname, contentType);
+    // delete it!
+    let resp=await fetch(`${process.env.VERCEL_URL}/api/vercel-blob/del`,{
+        method:"POST",
+        body:JSON.stringify({
+            "channel_name": channel_name,
+            "secret": process.env.secret,
+            "url": url,
+        })
+    });
+    console.log(await resp.text());
 });
 module.exports = app
