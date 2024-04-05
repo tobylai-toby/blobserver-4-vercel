@@ -1,0 +1,16 @@
+{
+  "name": "blobserver-4-vercel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "node localrun.js"
+  },
+  "author": "tobylai-toby",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/blob": "^0.22.2",
+    "express": "^4.19.2",
+    "node-fetch": "^2.7.0"
+  }
+}
